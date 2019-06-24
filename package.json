@@ -1,0 +1,28 @@
+{
+  "name": "linkxsystem.github.io",
+  "version": "1.0.0",
+  "description": "blog",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LinkXSystem/linkxsystem.github.io.git"
+  },
+  "author": "zhi",
+  "license": "MIT",
+  "keywords": [
+    "linkxsystem",
+    "blog",
+    "webpack",
+    "markdown"
+  ],
+  "bugs": {
+    "url": "https://github.com/LinkXSystem/linkxsystem.github.io/issues"
+  },
+  "homepage": "https://github.com/LinkXSystem/linkxsystem.github.io#readme",
+  "devDependencies": {
+    "webpack": "^4.35.0"
+  }
+}
