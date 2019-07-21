@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>LinkXSystem</title>
+    <link
+      href="https://cdn.bootcss.com/font-awesome/5.10.0-10/css/all.css"
+      rel="stylesheet"
+    />
     <style>
       .container {
         position: fixed;
@@ -12,9 +16,33 @@
         left: 50%;
         transform: translate(-50%, -50%);
       }
+      .icons {
+        position: fixed;
+        top: 1em;
+        right: 1em;
+
+        font-size: 1.5em;
+
+        padding: 0.25em 1em;
+        border-radius: 1em;
+        background: rgba(0, 0, 0, 0.1);
+        box-shadow: 0 0 0.5em 0 #f5f5f5;
+      }
+
+      .icons .icon + .icon {
+        margin-left: 1em;
+      }
     </style>
   </head>
   <body>
+    <div class="icons">
+      <a class="icon" href="https://codepen.io/linksystem/">
+        <i class="fab fa-codepen"></i>
+      </a>
+      <a class="icon" href="https://github.com/LinkXSystem">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
     <div class="container">
       LinkXSystem - In The World!
     </div>
