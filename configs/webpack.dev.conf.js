@@ -17,7 +17,7 @@ module.exports = {
   mode: 'development',
   entry: TargetFile,
   output: {
-    filename: 'index.[hash].js',
+    filename: '[name].[hash].js',
     path: OutputPath,
   },
   resolveLoader: {
@@ -43,7 +43,7 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(),
-    new MarkdownToHtmlPlugin(),
     new HtmlWebpackPlugin(),
+    new MarkdownToHtmlPlugin(),
   ],
 };
