@@ -9,6 +9,7 @@
       href="https://cdn.bootcss.com/font-awesome/5.10.0-10/css/all.css"
       rel="stylesheet"
     />
+    <script src="https://unpkg.com/browse/three@0.105.2/build/three.min.js"></script>
     <style>
       .container {
         position: fixed;
@@ -46,5 +47,81 @@
     <div class="container">
       LinkXSystem - In The World!
     </div>
+    <script id="vertexShader" type="x-shader/x-vertex">
+      void main() {
+          gl_Position = vec4(position, 1.0);
+      }
+    </script>
+    <script id="fragmentShader" type="x-shader/x-fragment">
+      uniform vec2 u_resolution;
+      uniform float u_time;
+
+      void main() {
+          vec2 st = gl_FragCoord.xy/u_resolution.xy;
+          vec3 col = 0.5 + 0.5*cos(u_time+st.xyx+vec3(0,2,4));
+          gl_FragColor = vec4(col, 1.0);
+      }
+    </script>
+    <script>
+      let container;
+      let camera, scene, renderer;
+      let uniforms;
+
+      init();
+      animate();
+
+      function init() {
+        container = document.getElementById("container");
+
+        camera = new THREE.Camera();
+        camera.position.z = 1;
+
+        scene = new THREE.Scene();
+        const geometry = new THREE.PlaneBufferGeometry(2, 2);
+        uniforms = {
+          u_time: {
+            type: "f",
+            value: 1.9
+          },
+          u_resolution: {
+            type: "v2",
+            value: new THREE.Vector2()
+          }
+        };
+
+        const material = new THREE.ShaderMaterial({
+          uniforms,
+          vertexShader: document.getElementById("vertexShader").textContent,
+          fragmentShader: document.getElementById("fragmentShader").textContent
+        });
+
+        const mesh = new THREE.Mesh(geometry, material);
+        scene.add(mesh);
+
+        renderer = new THREE.WebGLRenderer();
+        renderer.setPixelRatio(window.devicePixelRatio);
+
+        container.appendChild(renderer.domElement);
+
+        onWindowResize();
+        window.addEventListener("resize", onWindowResize, false);
+      }
+
+      function onWindowResize(event) {
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        uniforms.u_resolution.value.x = renderer.domElement.width;
+        uniforms.u_resolution.value.y = renderer.domElement.height;
+      }
+
+      function animate() {
+        requestAnimationFrame(animate);
+        render();
+      }
+
+      function render() {
+        uniforms.u_time.value += 0.05;
+        renderer.render(scene, camera);
+      }
+    </script>
   </body>
 </html>
