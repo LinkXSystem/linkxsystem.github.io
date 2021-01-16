@@ -1,0 +1,24 @@
+{
+  "name": "linkxsystem.github.io",
+  "version": "1.0.0",
+  "description": "blog",
+  "main": "index.js",
+  "scripts": {
+    "dev": "echo the dev command"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LinkXSystem/linkxsystem.github.io.git"
+  },
+  "author": "zhi",
+  "license": "MIT",
+  "keywords": [
+    "linkxsystem"
+  ],
+  "bugs": {
+    "url": "https://github.com/LinkXSystem/linkxsystem.github.io/issues"
+  },
+  "homepage": "https://github.com/LinkXSystem/linkxsystem.github.io#readme",
+  "devDependencies": {},
+  "dependencies": {}
+}
