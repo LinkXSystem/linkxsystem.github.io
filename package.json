@@ -4,7 +4,7 @@
   "description": "blog",
   "main": "index.js",
   "scripts": {
-    "dev": "echo the dev command"
+    "dev": "live-server --host=localhost --port=4200"
   },
   "repository": {
     "type": "git",
@@ -13,12 +13,15 @@
   "author": "zhi",
   "license": "MIT",
   "keywords": [
-    "linkxsystem"
+    "linkxsystem",
+    "PWA"
   ],
   "bugs": {
     "url": "https://github.com/LinkXSystem/linkxsystem.github.io/issues"
   },
   "homepage": "https://github.com/LinkXSystem/linkxsystem.github.io#readme",
-  "devDependencies": {},
+  "devDependencies": {
+    "live-server": "^1.2.1"
+  },
   "dependencies": {}
 }
