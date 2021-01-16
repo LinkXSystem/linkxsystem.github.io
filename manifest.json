@@ -1,7 +1,4 @@
 {
-    "short_name": "LinkXSystem",
-    "name": "LinkXSystem",
-    "display": "standalone",
     "icons": [
         {
             "src": "./assets/icons/logo-48x48.png",
@@ -24,6 +21,12 @@
             "sizes": "188x188"
         }
     ],
-    "start_url": "./index.html",
+    "short_name": "LinkXSystem",
+    "name": "LinkXSystem",
+    "display": "standalone",
+    "orientation": "portrait",
+    "start_url": ".",
+    "description": "This is a website",
+    "theme_color": "#ffffff",
     "background_color": "#2196f3"
 }
